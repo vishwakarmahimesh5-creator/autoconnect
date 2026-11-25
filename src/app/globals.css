@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fragment+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block");
+@import "tailwindcss";
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+}
+
+@theme inline {
+  /* Colors from the Stitch AutoConnect design */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #173B57;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #E8F2FF;
+  --color-on-primary-container: #0C334E;
+  --color-secondary: #FFC857;
+  --color-on-secondary: #173B57;
+  --color-secondary-container: #FFEFD6;
+  --color-on-secondary-container: #412D00;
+  --color-surface: #F8FAFC;
+  --color-on-surface: #1E293B;
+  --color-surface-card: #FFFFFF;
+  --color-on-surface-card: #1E293B;
+  --color-surface-container-low: #F1F5F9;
+  --color-surface-container: #E2E8F0;
+  --color-on-surface-variant: #475569;
+  --color-outline: #E2E8F0;
+  --color-outline-strong: #CBD5E1;
+  --color-success: #16A34A;
+  --color-on-success: #272727;
+  --color-success-text: #006E2D;
+  --color-success-container: #DCFCE7;
+  --color-on-success-container: #003914;
+  --color-danger: #DC2626;
+  --color-on-danger: #FFFFFF;
+  --color-danger-container: #FEE2E2;
+  --color-on-danger-container: #690005;
+  --color-offline-container: #F1F5F9;
+  --color-on-offline-container: #475569;
+  --color-on-danger-container: #7F1D1D;
+
+  /* Fonts */
+  --font-sans: "Poppins", sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --font-headline: "Poppins", sans-serif;
+  --font-title: "Poppins", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-label: "Poppins", sans-serif;
+  --font-mono: "Fragment Mono", monospace;
+
+  /* Typography */
+  --text-display-lg: 44px;
+  --text-display-lg--line-height: 52px;
+  --text-display-lg--letter-spacing: -0.5px;
+  --text-display-lg--font-weight: 700;
+  --text-display-lg-mobile: 30px;
+  --text-display-lg-mobile--line-height: 38px;
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-title-lg: 18px;
+  --text-title-lg--line-height: 26px;
+  --text-title-md: 16px;
+  --text-title-md--line-height: 24px;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 22px;
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 14px;
+  --text-mono-md: 13px;
+  --text-mono-md--line-height: 18px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Custom spacing */
+  --spacing-gutter-xs: 4px;
+  --spacing-gutter-sm: 8px;
+  --spacing-gutter-md: 16px;
+  --spacing-gutter-lg: 24px;
+  --spacing-gutter-xl: 32px;
+  --spacing-section: 56px;
+  --spacing-page-margin: 16px;
+
+  /* Transitions */
+  --duration-state-change: 150ms;
+  --duration-surface-enter: 220ms;
+  --duration-surface-exit: 150ms;
+  --ease-state-change: ease-out;
+  --ease-surface-enter: cubic-bezier(0.2, 0, 0, 1);
+  --ease-surface-exit: cubic-bezier(0.3, 0, 1, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+
+  vertical-align: middle;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #173B57;
+}
