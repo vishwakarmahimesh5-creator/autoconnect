@@ -1,18 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
-import {
-  getStation,
-} from "../../../services/stationService";
+import { getStation } from "../../../services/stationService";
+import { getDriversByStation } from "../../../services/driverService";
 
-import {
-  getDriversByStation,
-} from "../../../services/driverService";
-
-export default function StationPage() {
+function StationContent() {
   const params = useParams();
   const stationId = params.stationId;
 
@@ -46,7 +41,6 @@ export default function StationPage() {
 
         const driverData = await getDriversByStation(stationId);
         setDrivers(driverData);
-
       } catch (err) {
         console.error(err);
         setError("Unable to load station details.");
@@ -126,7 +120,6 @@ export default function StationPage() {
 
   return (
     <main className="min-h-screen bg-gray-50 p-5">
-
       <div className="max-w-5xl mx-auto">
 
         <div className="flex justify-between items-center mb-8">
@@ -218,5 +211,19 @@ export default function StationPage() {
 
       </div>
     </main>
+  );
+}
+
+export default function StationPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          Loading...
+        </div>
+      }
+    >
+      <StationContent />
+    </Suspense>
   );
 }

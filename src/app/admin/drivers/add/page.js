@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -15,7 +15,7 @@ import {
 
 const ADMIN_UID = "l5A7js9KCkY8a7LYN4CZFlj24ut1";
 
-export default function AddDriverPage() {
+function AddDriverForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const editId = searchParams.get("id");
@@ -183,7 +183,10 @@ export default function AddDriverPage() {
           </div>
 
           <div>
-            <label className="mb-1 block">WhatsApp Number (Optional)</label>
+            <label className="mb-1 block">
+              WhatsApp Number (Optional)
+            </label>
+
             <input
               name="whatsapp"
               type="tel"
@@ -196,7 +199,10 @@ export default function AddDriverPage() {
           </div>
 
           <div>
-            <label className="mb-1 block">Station Category *</label>
+            <label className="mb-1 block">
+              Station Category *
+            </label>
+
             <select
               name="stationId"
               value={form.stationId}
@@ -234,5 +240,19 @@ export default function AddDriverPage() {
         </form>
       </div>
     </main>
+  );
+}
+
+export default function AddDriverPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="flex min-h-screen items-center justify-center">
+          Loading driver form...
+        </main>
+      }
+    >
+      <AddDriverForm />
+    </Suspense>
   );
 }
